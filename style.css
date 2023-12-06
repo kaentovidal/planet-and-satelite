@@ -9,19 +9,19 @@ body {
     font-size: 12px;
 }
 
-main {
+.planet {
     width: 30em;
     height: 30em;
     background: white;
     border-radius: 50%;
     box-shadow: 
-        0 0 5em #fed84c80,
+        0 0 5em 0 #fed84c80,
         0 0 20em 4em #e8a55233,
         0 0 55em 8em #ff4d4d1a; 
     position: relative;
 }
 
-div, div::after{
+.satellite, .satellite::after{
     content: "";
     position: absolute;
     width: 5em;
@@ -29,7 +29,7 @@ div, div::after{
     border-radius: 50%;
 }
 
-div {
+.satellite {
     background: #ffedd1;
     box-shadow: -2em 0 5em -1em white;
     overflow: hidden;
@@ -39,7 +39,7 @@ div {
     animation: round 5s infinite ease-in-out;
 }
 
-div::after {
+.satellite::after {
     background: #262938;
     width: 2.5em;
     left: 2.5em;
@@ -49,13 +49,18 @@ div::after {
 
 @keyframes shadow {
     0% {
-        width: 2.4em;
+        width: 2.5em;
         left: 0;
     }
 
     25% {
         width: 5em;
         left: 0;
+    }
+
+    50%{
+        width: 2.5em;
+        left: 2.5em;
     }
 
     75% {
@@ -77,7 +82,8 @@ div::after {
 
 @keyframes round {
     
-    0%,100%{
+    0%,
+    100%{
         top: 2em;
         left: -15em;
         box-shadow: -2em 0 5em .5em #c6836466;
